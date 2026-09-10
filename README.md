@@ -1,8 +1,5 @@
 # Clear-Command-History-in-Linux
 
-````md
-# Clearing Command History in Linux
-
 To clear your command history in Linux, you can **use the** **`history -c`** **command to wipe the current session's memory and overwrite the permanent log file using** **`history -w`**. Because Linux caches history in RAM before writing it to a file, completely erasing it requires clearing both locations.
 
 ## 1. Clear All History Completely (Recommended)
