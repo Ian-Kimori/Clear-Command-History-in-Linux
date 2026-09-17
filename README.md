@@ -47,8 +47,34 @@ history -d <line_number>
 ```bash
 history -w
 ```
+## 4. Delete a Specific Command Line Range
 
-## 4. Prevent Commands from Being Recorded
+If you don't want to clear everything but need to remove a specific entry (like an accidentally typed password):
+
+1. Type `history` to view your commands with their corresponding line numbers.
+
+2. Delete the specific range using:
+
+### Method A: Use a Backward Loop (Most Reliable)
+Line numbers shift down as each item is deleted, so deleting from highest to lowest prevents errors. Replace 105 and 100 with your end and start numbers:
+
+```bash
+for i in {105..100}; do history -d $i; done
+```
+
+### Method B: Direct Range (If Supported)
+In some Bash versions, you can specify a direct range:
+
+```bash
+history -d 100-105
+```
+3. Save the changes to your permanent file:
+
+```bash
+history -w
+```
+
+## 5. Prevent Commands from Being Recorded
 
 ### Add a Leading Space
 
